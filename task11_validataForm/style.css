@@ -1,0 +1,43 @@
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background: rgb(0, 255, 208);
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.container form {
+	padding: 0 40px;
+}
+
+form .form-control {
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin: 40px 0;
+}
+
+.form-control.error {
+	border-bottom-color: rgba(254, 44, 85,0.8);
+}
+
+.form-control input {
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+small {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	margin-top: 3px;
+	color: #e74c3c;
+}

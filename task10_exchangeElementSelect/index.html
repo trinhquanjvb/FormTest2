@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <select id="newsLeft" multiple style="height: 200px; padding: 12px;" onchange="handleChangeLeft()">
+            <option style="padding:4px ;" value="Tin công nghệ">Tin công nghệ</option>
+            <option style="padding:4px ;" value="Tin thời sự">Tin thời sự</option>
+            <option style="padding:4px ;" value="Tin quốc tế">Tin quốc tế</option>
+            <option style="padding:4px ;" value="Tin thể thao">Tin thể thao</option>
+            <option style="padding:4px ;" value="Tin nông nghiệp">Tin nông nghiệp</option>
+        </select>
+        
+        <button class="btn btn-left"><<</button>
+        <button class="btn btn-right">>></button>
+
+        <select id="newsRight" multiple style="height: 200px;width: 146px; padding: 12px;margin-left: 16px;" onchange="handleChangeRight()">
+        </select>
+    </div>
+
+    <script>
+        const newsLeft= document.querySelector('#newsLeft')
+        const newsRight= document.querySelector('#newsRight')
+        const btnLeft= document.querySelector('.btn-left')
+        const btnRight= document.querySelector('.btn-right')
+
+        // option right to left
+        function handleChangeLeft() {
+            btnRight.addEventListener('click', handleClick)
+
+            function handleClick() {
+                const data= []
+                const options= newsLeft.options
+                const index= options.length
+                for(var i = 0; i < index; ++i) {
+                    if(options[i]?.selected) {
+                        data.push(options[i])
+                        newsRight.appendChild(data[0])
+                    }
+                }
+            }
+        }
+
+
+        // option left to right
+        function handleChangeRight() {
+            btnLeft.addEventListener('click', handleClick)
+
+            function handleClick() {
+                const data= []
+                const options= newsRight.options
+                const index= options.length
+                for(let i = 0; i < index; ++i ) {
+                    if(options[i].selected) {
+                        data.push(options[i])
+                        newsLeft.appendChild(data[0])
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

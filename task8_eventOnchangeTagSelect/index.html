@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1 class="heading">Chọn giới tính</h1>
+    <p class="mb-5">In ra thông báo khi giới tính được thay đổi</p>
+
+    <select name="" id="gender" onchange="handleSelect()" class="mb-5">
+        <option value="--Chọn--">--Chọn--</option>
+        <option value="Nam">Nam</option>
+        <option value="Nữ">Nữ</option>
+    </select>
+
+    <p id="result"></p>
+
+    <script >
+        let option= document.getElementById('gender')
+        let result= document.getElementById('result')
+        function handleSelect() {
+            console.log(option.value)
+            if(option.value === 'Nam' || option.value === 'Nữ') {
+                result.innerText= `Bạn đã chọn giới tính ${option.value}`
+            } else {
+                result.innerText= 'Bạn chưa chọn giới tính'
+            }
+        }
+    </script>
+</body>
+</html>
